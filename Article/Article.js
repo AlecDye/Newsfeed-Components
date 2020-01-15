@@ -170,8 +170,8 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 //   articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
 // })
 
-// --- calling function via map ---
-// const articles = document.querySelector('.articles');
-// data.map((article) => {
-//   return articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
-// })
+// --- calling function via map and passing through data ---
+const articles = document.querySelector('.articles');
+data.map((article) => {
+  return articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+})
