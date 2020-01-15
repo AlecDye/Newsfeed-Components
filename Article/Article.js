@@ -164,9 +164,10 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   return article;
 };
 
+// --- forEach loop (doesn't work) ---
 // const articles = document.querySelector('.articles');
 // data.forEach(stuff => {
-//   articles.append(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+//   articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
 // })
 
 // --- calling function and passing through data ---
