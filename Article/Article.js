@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'A new spicy article',
+    date: 'April 1st, 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In aliquam sem fringilla ut morbi. Cursus euismod quis viverra nibh. Viverra justo nec ultrices dui sapien.`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In aliquam sem fringilla ut morbi. Cursus euismod quis viverra nibh. Viverra justo nec ultrices dui sapien.`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In aliquam sem fringilla ut morbi. Cursus euismod quis viverra nibh. Viverra justo nec ultrices dui sapien.`
   }
 ];
 
@@ -112,3 +121,56 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  // --- creating elements with styles ---
+  const article = document.createElement('div');
+  const aTitle = document.createElement('h2');
+  const aDate = document.createElement('p');
+  const aFirstPara = document.createElement('p');
+  const aSecondPara = document.createElement('p');
+  const aThirdPara = document.createElement('p');
+  const buttonExpand = document.createElement('span');
+
+  // --- appending elements to parent ---
+  article.append(aTitle);
+  article.append(aDate);
+  article.append(aFirstPara);
+  article.append(aSecondPara);
+  article.append(aThirdPara);
+  article.append(buttonExpand);
+
+  // --- applying styles to elements ---
+  article.classList.add('article');
+  // aTitle.classList.add('h2');
+  aDate.classList.add('date');
+  aFirstPara.classList.add('firstParagraph');
+  aSecondPara.classList.add('secondParagraph');
+  aThirdPara.classList.add('thirdParagraph');
+  buttonExpand.classList.add('expandButton');
+
+  // --- text content ---
+  aTitle.textContent = title;
+  aDate.textContent = date;
+  aFirstPara.textContent = firstParagraph;
+  aSecondPara.textContent = secondParagraph;
+  aThirdPara.textContent = thirdParagraph;
+  buttonExpand.textContent = 'Click to Expand';
+  // --- toggle event ---
+  buttonExpand.addEventListener('click', (event) => {
+    article.classList.toggle('article-open');
+  })
+  // return function
+  return article;
+};
+
+// const articles = document.querySelector('.articles');
+// data.forEach(stuff => {
+//   articles.append(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+// })
+
+// --- calling function and passing through data ---
+const articles = document.querySelector('.articles');
+data.map((article) => {
+  return articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+})
