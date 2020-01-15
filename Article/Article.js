@@ -164,14 +164,14 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   return article;
 };
 
-// --- forEach loop (doesn't work) ---
+// --- calling function via forEach loop  ---
 // const articles = document.querySelector('.articles');
-// data.forEach(stuff => {
+// data.forEach((article) => {
 //   articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
 // })
 
-// --- calling function and passing through data ---
-const articles = document.querySelector('.articles');
-data.map((article) => {
-  return articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
-})
+// --- calling function via map ---
+// const articles = document.querySelector('.articles');
+// data.map((article) => {
+//   return articles.append(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+// })
